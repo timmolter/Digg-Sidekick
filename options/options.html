@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Digg-Sidekick - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ Digg-Sidekick Settings</h1>
+    
+    <div class="section">
+      <h2>📦 Import/Export Filters</h2>
+      <p class="description">Backup your filters or restore from a previous backup.</p>
+      <div class="button-group">
+        <button id="exportBtn" class="btn primary">📤 Export Filters</button>
+        <button id="importBtn" class="btn secondary">📥 Import Filters</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>⌨️ Keyboard Shortcuts</h2>
+      <p class="description">Quick access to common actions.</p>
+      <div class="shortcut-list">
+        <div class="shortcut">
+          <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
+          <span>Toggle filtering on/off</span>
+        </div>
+      </div>
+      <p class="hint">Configure more shortcuts in Chrome: <code>chrome://extensions/shortcuts</code></p>
+    </div>
+    
+    <div class="section">
+      <h2>🔧 Advanced Settings</h2>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="autoApply">
+          <span class="checkmark"></span>
+          <div>
+            <strong>Auto-apply filters on page load</strong>
+            <p class="hint">Automatically filter stories when you visit Digg</p>
+          </div>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="showCount">
+          <span class="checkmark"></span>
+          <div>
+            <strong>Show hidden count badge</strong>
+            <p class="hint">Display number of hidden stories on extension icon</p>
+          </div>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="highlightMatches">
+          <span class="checkmark"></span>
+          <div>
+            <strong>Highlight matching terms</strong>
+            <p class="hint">Visually emphasize filtered keywords in stories</p>
+          </div>
+        </label>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>📊 Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="totalFilters">0</span>
+          <span class="stat-label">Total Filters</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="keywordCount">0</span>
+          <span class="stat-label">Keywords</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="authorCount">0</span>
+          <span class="stat-label">Authors</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="flairCount">0</span>
+          <span class="stat-label">Flairs</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section danger-zone">
+      <h2>⚠️ Danger Zone</h2>
+      <p class="description">These actions cannot be undone.</p>
+      <button id="resetBtn" class="btn danger">🗑️ Reset All Filters</button>
+    </div>
+    
+    <div class="footer">
+      <p>Digg-Sidekick v1.0.0</p>
+      <p>
+        <a href="https://github.com/timmolter/Digg-Sidekick" target="_blank">GitHub</a> · 
+        <a href="#" id="helpBtn">Help</a>
+      </p>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

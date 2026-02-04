@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📰 Digg-Sidekick</h1>
+      <div class="stats">
+        <span id="hiddenCount">0 hidden</span>
+        <button id="toggleFilter">🔴 Disable</button>
+      </div>
+    </header>
+    
+    <div class="quick-actions">
+      <button id="quickAdd">+ Quick Add</button>
+      <button id="openOptions">⚙️ Options</button>
+      <button id="exportBtn">📤 Export</button>
+    </div>
+    
+    <div class="filter-type">
+      <button class="tab-btn active" data-type="keyword">Keywords</button>
+      <button class="tab-btn" data-type="author">Authors</button>
+      <button class="tab-btn" data-type="flair">Flairs</button>
+    </div>
+    
+    <div class="filters-list">
+      <div class="filter-item">
+        <input type="text" id="newFilter" placeholder="Add keyword (e.g., 'politics', 'NFT')">
+        <select id="filterType">
+          <option value="hide">Hide</option>
+          <option value="highlight">Highlight</option>
+          <option value="whitelist">Show Only</option>
+        </select>
+        <button id="addFilter">Add</button>
+      </div>
+      
+      <div id="filtersContainer"></div>
+    </div>
+    
+    <div class="footer">
+      <label>
+        <input type="checkbox" id="autoRefresh"> Auto-refresh
+      </label>
+      <button id="applyNow">Apply Filters Now</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
