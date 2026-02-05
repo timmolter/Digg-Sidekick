@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
   elements.autoRefresh.addEventListener('change', saveData);
 
   function addFilter() {
-    const text = elements.newFilter.value.trim();
+    const text = sanitizeFilter(elements.newFilter.value);
     if (!text) return;
 
     filters[currentTab].push({
@@ -128,6 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+  }
+
+  function sanitizeFilter(text) {
+    // Remove potentially dangerous characters and limit length
+    return text
+      .replace(/[<>"'`]/g, '')
+      .replace(/javascript:/gi, '')
+      .replace(/data:/gi, '')
+      .substring(0, 200)
+      .trim();
   }
 
   function saveData() {

@@ -234,10 +234,21 @@ class DiggFilterEngine {
           
         case 'addQuickFilter':
           if (request.text) {
+            // Sanitize input before storing
+            const sanitizedText = request.text
+              .replace(/[<>"'`]/g, '')
+              .replace(/javascript:/gi, '')
+              .replace(/data:/gi, '')
+              .substring(0, 200)
+              .trim();
+            if (!sanitizedText) {
+              sendResponse({ success: false });
+              break;
+            }
             chrome.storage.sync.get(['diggFilters'], (data) => {
               const filters = data.diggFilters || { keyword: [], author: [], flair: [] };
               filters.keyword.push({
-                text: request.text,
+                text: sanitizedText,
                 type: 'hide',
                 id: Date.now() + Math.random()
               });

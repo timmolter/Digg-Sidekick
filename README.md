@@ -50,9 +50,9 @@ Digg-Sidekick/
 ### Creating Icons
 
 Before loading, create icon files (16x16, 48x48, 128x128 PNG):
-- Use [Canva](https://canva.com) (free online editor)
-- Use [Figma](https://figma.com) (free design tool)
-- Generate via [favicon.io](https://favicon.io)
+```
+cd icons && for size in 16 48 128; do rsvg-convert -w $size -h $size icon.svg -o icon${size}.png; done && ls -la
+```
 
 ## 🎯 Usage
 
@@ -91,7 +91,7 @@ Access advanced settings via the Options page:
 
 ### Chrome Web Store
 
-1. Create zip: `zip -r digg-sidekick.zip Digg-Sidekick/`
+1. Create zip (from parent directory): `cd .. && zip -r digg-sidekick.zip Digg-Sidekick/ -x "*.DS_Store" -x "*.git*" -x "*.txt"`
 2. Go to [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole/)
 3. Pay $5 one-time fee
 4. Upload zip with screenshots and description

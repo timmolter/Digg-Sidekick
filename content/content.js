@@ -1,4 +1,9 @@
 // Main content script
+// Security: Only run on HTTPS
+if (!location.href.startsWith('https://digg.com')) {
+  console.warn('Digg-Sidekick: Only runs on https://digg.com');
+}
+
 console.log('Digg-Sidekick loaded');
 
 // Inject UI elements
