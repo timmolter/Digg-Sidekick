@@ -91,7 +91,10 @@ Access advanced settings via the Options page:
 
 ### Chrome Web Store
 
-1. Create zip (from parent directory): `cd .. && zip -r digg-sidekick.zip Digg-Sidekick/ -x "*.DS_Store" -x "*.git*" -x "*.txt"`
+1. Create zip (from inside the project folder): 
+   ```
+   zip -r ../digg-sidekick.zip . -x "*.DS_Store" -x "*.git*" -x "*.txt"
+   ```
 2. Go to [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole/)
 3. Pay $5 one-time fee
 4. Upload zip with screenshots and description
