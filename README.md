@@ -93,7 +93,7 @@ Access advanced settings via the Options page:
 
 1. Create zip (from inside the project folder): 
    ```
-   zip -r ../digg-sidekick.zip . -x "*.DS_Store" -x "*.git*" -x "*.txt"
+   zip -r ../digg-sidekick.zip . -x "*.DS_Store" -x "*.git*" -x "*.txt" -x "prompts/*" -x "*.md"
    ```
 2. Go to [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole/)
 3. Pay $5 one-time fee
